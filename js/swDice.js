@@ -49,3 +49,37 @@ function rollSetback(){
 			break;
 	}
 }
+
+// Event function for the roll button
+$(document).ready(function(){
+	$("#roll").on("click", function(){
+		var boosts = Number($("#boost").val());
+		var setbacks = Number($("#setback").val());
+		var pool = [];
+		
+		// Roll the dice
+		// Boost die
+		for(var i = 0; i < boosts; i++){
+			var dice = rollBoost();
+			if(typeof dice == "string")
+				pool.push(dice);
+			else
+				pool = pool.concat(dice);
+		}
+		
+		// Setback die
+		for(var j = 0; j < setbacks; j++){
+			var dice = rollSetback();
+			if(typeof dice == "string")
+				pool.push(dice);
+			else
+				pool = pool.concat(dice);
+		}
+		
+		// Output to html file
+		var output = "";
+		for(var z=0; z < poll.length; z++){
+			output += poll[z] + "\n";
+		}
+	});
+});
