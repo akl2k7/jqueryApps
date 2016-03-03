@@ -78,8 +78,8 @@ $(document).ready(function(){
 		
 		// Output to html file
 		var output = "";
-		for(var z=0; z < poll.length; z++){
-			output += poll[z] + "\n";
+		for(var z=0; z < pool.length; z++){
+			output += pool[z] + "\n";
 		}
 	});
 });
